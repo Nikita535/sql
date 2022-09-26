@@ -46,3 +46,22 @@ UPDATE autosalon.Client a
     SET a.passport_data = 
         IF (a.passport_data NOT LIKE '%397','0000 111','1111 397');
 SELECT * FROM autosalon.Client;
+
+
+SELECT * 
+    FROM autosalon.Product 
+        WHERE product_id IN 
+            (SELECT product_id 
+                FROM autosalon.Contract 
+                    WHERE conract_id=1 AND delivery LIKE 'true');
+
+
+SELECT telephone_number
+    FROM autosalon.Client 
+       JOIN autosalon.Contract USING (client_id)
+        JOIN autosalon.Product USING (product_id)
+        JOIN autosalon.Car_mark USING (car_mark_id)
+        JOIN autosalon.Technical_details USING (technical_details_id)
+        JOIN autosalon.Engine_type USING (engine_type_id)
+        WHERE engine_type_name LIKE '3S-FE' AND mark LIKE 'BMW';
+        

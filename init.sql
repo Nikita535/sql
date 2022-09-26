@@ -124,51 +124,134 @@ CREATE TABLE Contract
 INSERT INTO Client (name, surname, passport_data, telephone_number)
     VALUES
         ('Nikita', 'Zhiznevskiy', '5546 789','+79151618679'),
-        ('Renat', 'Khakimov', '5546 397','+791545612');
+        ('Renat', 'Khakimov', '5546 397','+791545612'),
+		('Andrey', 'Lobankov', '5533 228','+7915654321'),
+		('Max', 'Milko', '3366 888','+7915765895'),
+		('Grigoriy', 'Golubev', '1199 341','+79158539834'),
+		('Kseniya', 'Martemianova', '7722 228','+79159361935'),
+		('Sergey', 'Puck', '7721 212','+79158190547'),
+		('Nikita', 'Glushko', '5123 134','+79150867898'),
+		('Anton', 'Pavlovich', '2442 228','+7915654321'),
+		('Pasha', 'Korablikov', '5542 654','+7915654321');
 
 INSERT INTO Car_mark (mark,series)
     VALUES
         ('BMW',2),
-        ('BMW',1);
+        ('BMW',1),
+		('Alfa Romeo',1),
+		('Alfa Romeo',2),
+		('Alfa Romeo',3),
+		('Audi',1),
+		('Audi',2),
+		('Audi',3),
+		('Сadillac',1),
+		('Сadillac',2);
 
 INSERT INTO Manufacture_country (country,city)
     VALUES
         ('Russia','Kaliningrad'),
-        ('Russia','Moscow');
+        ('Russia','Moscow'),
+		('Russia','Moscow'),
+		('Russia','Moscow'),
+		('Russia','Moscow'),
+		('Russia','Volgograd'),
+		('Russia','Volgograd'),
+		('Russia','Volgograd'),
+		('Russia','Saint-Petersburg'),
+		('Russia','Saint-Petersburg');
 
 INSERT INTO Body_type (body_type_name)
     VALUES
         ('three-volume'),
-        ('three-volume');
+        ('three-volume'),
+		('two-volume'),
+		('three-volume'),
+		('two-volume'),
+		('two-volume'),
+		('two-volume'),
+		('two-volume'),
+		('three-volume'),
+		('three-volume');
 
 INSERT INTO Engine_type (engine_type_name,engine_volume,engine_power)
     VALUES
         ('3S-FE',3.8,100),
-        ('3S-FS',3.5,110);
+        ('3S-FS',3.5,110),
+		('3S-FS',3.2,120),
+		('3S-FS',3.9,130),
+		('2S-GF',4.0,150),
+		('3S-GF',4.1,156),
+		('4S-GF',4.2,153),
+		('3S-FE',3.5,100),
+		('3S-FE',3.5,100),
+		('3S-FE',3.5,100);
+
 
 INSERT INTO Engine_layout_type (engine_layout_type_name)
     VALUES
         ('back'),
-        ('back');
+        ('back'),
+		('back'),
+		('back'),
+		('back'),
+		('back'),
+		('front'),
+		('front'),
+		('front'),
+		('front');
+		
 
 INSERT INTO Payment_type (payment_type)
     VALUES
         ('online'),
-        ('cache');
+        ('cache'),
+		('cache'),
+		('cache'),
+		('cache'),
+		('cache'),
+		('cache'),
+		('cache'),
+		('cache'),
+		('cache');
 
 INSERT INTO Technical_details (number_of_doors,number_of_seats,engine_type_id,body_type_id,engine_layout_type_id)
     VALUES
         (4,5,1,1,1),
-        (2,2,2,2,2);
+        (2,2,2,2,2),
+		(4,4,3,3,3),
+		(4,5,4,4,4),
+		(2,2,5,5,5),
+		(2,2,6,6,6),
+		(4,5,7,7,7),
+		(4,4,8,8,8),
+		(2,2,9,9,9),
+		(4,5,10,10,10);
 
 INSERT INTO Product (car_mark_id,model,color,availability,price,technical_details_id,manufacture_country_id)
     VALUES
         (1,'VAZ','black','true','1000000',1,1),
-        (2,'VAZ','blue','true','1500000',2,2);
+        (2,'VAZ','blue','true','1500000',2,2),
+		(3,'VAZ','red','true','1500000',3,3),
+		(4,'VAZ','blue','true','1500000',4,4),
+		(5,'VAZ','black','true','1600000',5,5),
+		(6,'VAZ','black','true','1700000',6,6),
+		(7,'VAZ','white','true','1800000',7,7),
+		(8,'VAZ','blue','true','2000000',8,8),
+		(9,'VAZ','yellow','true','3000000',9,9),
+		(10,'VAZ','gray','true','4000000',10,10);
 
 
 INSERT INTO Contract (product_id,client_id,datetime,delivery,payment_type_id)
     VALUES
-        (1,(Select client_id from Client where passport_data='5546 789'),'2022-08-22', 'true',1),
-        (2,(Select client_id from Client where passport_data='5546 397'),'2022-08-21', 'true',2);
+        (1,1,'2022-08-22', 'true',1),
+        (2,2,'2022-08-21', 'true',2),
+		(3,3,'2022-08-22', 'true',3),
+		(4,4,'2022-08-23', 'true',4),
+		(5,5,'2022-08-24', 'true',5),
+		(6,6,'2022-08-25', 'true',6),
+		(7,7,'2022-08-26', 'true',7),
+		(8,8,'2022-08-27', 'true',8),
+		(9,9,'2022-08-28', 'true',9),
+		(10,10,'2022-08-29', 'true',10);
+
 
